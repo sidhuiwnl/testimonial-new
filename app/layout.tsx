@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Dashboard from "./components/Dashboard";
-import Navbar from "./components/Navbar";
+import Dashboard from "./_components/Dashboard";
+import Navbar from "./_components/Navbar";
+
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +26,9 @@ export default function RootLayout({
           <Dashboard />
           <main className="flex-1 overflow-y-auto p-4">
             {children}
+            
           </main>
+          <Toaster/>
         </div>
       </body>
     </html>
