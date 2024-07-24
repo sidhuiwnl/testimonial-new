@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Dashboard from "./_components/Dashboard";
 import Navbar from "./_components/Navbar";
+import { ThemeProvider } from "@/components/theme-provider";
 
 import { Toaster } from "@/components/ui/sonner";
 
@@ -19,17 +20,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} flex flex-col h-screen`}>
-       <Navbar username="sidharth"/>
-        <div className="flex flex-1 overflow-hidden">
-          <Dashboard />
-          <main className="flex-1 overflow-y-auto p-4">
-            {children}
-            
-          </main>
-          <Toaster/>
-        </div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar username="sidharth" />
+          <div className="flex flex-1 overflow-hidden">
+            <Dashboard />
+            <main className="flex-1 overflow-y-auto p-4">
+              {children}
+              </main>
+            <Toaster />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

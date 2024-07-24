@@ -2,33 +2,38 @@ import Link from "next/link";
 
 export default function Dashboard() {
   return (
-    <>
-      <div className="w-64 bg-slate-100 p-4 h-screen">
-        <div className="mb-6 p-4">
-          <h2 className="text-lg  mb-2">Contact</h2>
-          <ul className="space-y-2">
-            <Link
-              href={"/testimonial"}
-              className="hover:bg-gray-200 p-2 rounded font-bold"
-            >
-              Import Testimonial
-            </Link>
-            <li className="hover:bg-gray-200 p-2 rounded font-bold">
-              Invite to review
+    <div className="w-64 bg-white h-screen shadow-lg">
+      <div className="p-6">
+        <h1 className="text-xl font-semibold text-gray-800 mb-6">Dashboard</h1>
+        <nav>
+          <ul className="space-y-4">
+            <li>
+              <Link
+                href="/testimonial"
+                className="block py-2 px-4 text-gray-600 hover:bg-gray-100 rounded transition duration-150 ease-in-out"
+              >
+                Import Testimonial
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Tweets"
+                className="block py-2 px-4 text-gray-600 hover:bg-gray-100 rounded transition duration-150 ease-in-out"
+              >
+                Testimonials
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/third"
+                className="block py-2 px-4 text-gray-600 hover:bg-gray-100 rounded transition duration-150 ease-in-out"
+              >
+                Review
+              </Link>
             </li>
           </ul>
-          <hr></hr>
-        </div>
-        <div className="p-4">
-          <h2 className="text-lg  mb-2">Manage</h2>
-          <ul className="space-y-2">
-            <li className="hover:bg-gray-200 p-2 rounded font-bold">
-              Testimonials
-            </li>
-          </ul>
-          <hr></hr>
-        </div>
+        </nav>
       </div>
-    </>
+    </div>
   );
 }
