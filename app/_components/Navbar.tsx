@@ -1,7 +1,7 @@
 import { lucia,validateRequest } from "@/lib/auth"
 import { redirect } from "next/navigation"
 import { cookies } from "next/headers"
-import { ModeToggle } from "@/components/mode-toggle"
+
 
 
 
@@ -22,7 +22,7 @@ export default function Navbar({username } : {username :string}) {
         <form action={logout}>
 			    <Button>Sign out</Button>
 		</form>
-		<ModeToggle/>
+		
       </div>
     </header>
   )

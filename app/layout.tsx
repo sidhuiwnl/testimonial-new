@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Dashboard from "./_components/Dashboard";
 import Navbar from "./_components/Navbar";
-import { ThemeProvider } from "@/components/theme-provider";
+
 
 import { Toaster } from "@/components/ui/sonner";
 
@@ -22,12 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} flex flex-col h-screen`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        
           <Navbar username="sidharth" />
           <div className="flex flex-1 overflow-hidden">
             <Dashboard />
@@ -36,7 +31,7 @@ export default function RootLayout({
               </main>
             <Toaster />
           </div>
-        </ThemeProvider>
+        
       </body>
     </html>
   );
