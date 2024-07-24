@@ -3,6 +3,7 @@
 import { useCallback, useMemo, useState } from "react";
 import { Tweet } from "react-tweet";
 import { toast } from "sonner";
+import  { components } from "../_components/TwitterComponents" 
 
 export default function Testimonial() {
   const [tweetInput, setTweetInput] = useState("");
@@ -75,7 +76,7 @@ export default function Testimonial() {
       </div>
       {tweetInput && (
         <div className="mt-4">
-          <Tweet id={tweetUrl} />
+          <Tweet id={tweetUrl} components={components} />
         </div>
       )}
     </div>
