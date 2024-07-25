@@ -3,7 +3,7 @@
 import { useCallback, useMemo, useState } from "react";
 import { Tweet } from "react-tweet";
 import { toast } from "sonner";
-import  { components } from "../_components/TwitterComponents" 
+import { components } from "@/app/_components/TwitterComponents";
 
 export default function Testimonial() {
   const [tweetInput, setTweetInput] = useState("");

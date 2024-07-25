@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Navbar({username } : {username :string}) {
   return (
-    <header className="flex h-16 w-full items-center justify-between bg-background px-4 sm:px-6 border-b">
+    <header className="flex h-16 w-full items-center justify-between bg-background px-4 py-4 sm:px-6 border-b">
       <div className="flex items-center gap-4">
         <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
           Testimonial

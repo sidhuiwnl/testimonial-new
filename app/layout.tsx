@@ -4,7 +4,7 @@ import "./globals.css";
 import Dashboard from "./_components/Dashboard";
 import Navbar from "./_components/Navbar";
 
-
+  
 import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
