@@ -9,7 +9,9 @@ import { cookies } from "next/headers"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
-export default function Navbar({username } : {username :string}) {
+export default async function  Navbar() {
+	const { user } = await validateRequest();
+	const username = user?.username
   return (
     <header className="flex h-16 w-full items-center justify-between bg-background px-4 py-4 sm:px-6 border-b">
       <div className="flex items-center gap-4">

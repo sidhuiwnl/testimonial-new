@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} flex flex-col h-screen`}>
         
-          <Navbar username="sidharth" />
+          <Navbar/>
           <div className="flex flex-1 overflow-hidden">
             <Dashboard />
             <main className="flex-1 overflow-y-auto p-4">
