@@ -15,14 +15,14 @@ export default async function  Navbar() {
   return (
     <header className="flex h-16 w-full items-center justify-between bg-background px-4 py-4 sm:px-6 border-b">
       <div className="flex items-center gap-4">
-        <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
+        <Link href="/" className="text-sm font-medium hover:underline" prefetch={false}>
           Testimonial
         </Link>
       </div>
-      <div className="font-medium">Hi,{username}</div>
+      <div className="font-medium">HELLO {username}</div>
       <div className="flex items-center gap-4">
         <form action={logout}>
-			    <Button>Sign out</Button>
+			   { user ?  <Button>Sign out</Button> : null}
 		</form>
 		
       </div>

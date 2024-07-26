@@ -3,7 +3,7 @@ import { FaFileImport, FaComments, FaClipboardCheck } from "react-icons/fa";
 
 export default function Dashboard() {
   return (
-    <div className="w-64 bg-white max-h-screen shadow-lg">
+    <div className="w-64 bg-white max-h-screen rounded border-r-2">
       <div className="p-6">
         <h1 className="text-xl font-semibold text-gray-800 mb-6 hover:underline">Dashboard</h1>
         <nav>

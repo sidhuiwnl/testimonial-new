@@ -25,26 +25,34 @@ export default function Testimonial() {
   const tweetUrl = useMemo(() => extractTweet(tweetInput), [tweetInput]);
 
   async function tweetToDatabase(){
-    try {
-      const response =  await fetch('/api/tweet',{
-        method : "POST",
-        headers : {
-          "Content-type" : 'application/json'
-        },
-        body : JSON.stringify({tweetUrl})
-       })
-    
-       if(!response.ok){
-        const errorData = await response.json().catch(() => ({}))
-        toast.warning(errorData)
-       }else{
-        toast("Successful saving Tweet ")
-       }
-    } catch (error) {
-      console.error('Error saving tweet to database:', error);
-      toast.error(error instanceof Error ? error.message : 'Failed to save tweet');
+
+    if(!tweetInput){
+      toast.error("Please add a URL or ID to save the tweet");
       return false;
+    }else{
+      try {
+        const response =  await fetch('/api/tweet',{
+          method : "POST",
+          headers : {
+            "Content-type" : 'application/json'
+          },
+          body : JSON.stringify({tweetUrl})
+         })
+      
+         if(!response.ok){
+          const errorData = await response.json().catch(() => ({}))
+          toast.warning(errorData)
+         }else{
+          toast("Successful saving Tweet ")
+          setTweetInput("");
+         }
+      } catch (error) {
+        console.error('Error saving tweet to database:', error);
+        toast.error(error instanceof Error ? error.message : 'Failed to save tweet');
+        return false;
+      }
     }
+    
   }
 
   

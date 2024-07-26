@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Dashboard from "./_components/Dashboard";
-import Navbar from "./_components/Navbar";
 
+import Navbar from "./_components/Navbar";
+import ConditionalDashboard from "./_components/ConditionalDashboard";
   
 import { Toaster } from "@/components/ui/sonner";
 
@@ -25,8 +25,8 @@ export default function RootLayout({
         
           <Navbar/>
           <div className="flex flex-1 overflow-hidden">
-            <Dashboard />
-            <main className="flex-1 overflow-y-auto p-4">
+            <ConditionalDashboard/>
+            <main className="flex-1">
               {children}
               </main>
             <Toaster />
