@@ -10,10 +10,9 @@ export async function TweetGrid() {
         const result = await deleteTweet({ id });
         if (result.success) {
             revalidatePath('/Tweets')
-             console.log("successefully")
+            console.log("successfully deleted")
         } else {
             console.error(result.msg);
-            
         }
     }
 
@@ -23,16 +22,20 @@ export async function TweetGrid() {
 
         if (!tweets || tweets.length === 0) {
             return <p>No tweets found.</p>;
+        } else if (result) {
+            revalidatePath('/Tweets')
         }
 
         return (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {tweets.map((tweet) => (
-                    <div key={tweet.id} className="border rounded-lg p-4 shadow-sm">
-                        <Tweet id={tweet.tweetUrl} />
-                        <form action={handleDelete}>
+                    <div key={tweet.id}>
+                       
+                            <Tweet id={tweet.tweetUrl} />
+                        
+                        <form action={handleDelete} className="mt-4">
                             <input type="hidden" name="id" value={tweet.id} />
-                            <Button type="submit">Delete</Button>
+                            <Button type="submit" className="w-full">Delete</Button>
                         </form>
                     </div>
                 ))}

@@ -53,8 +53,6 @@ export  async function deleteTweet({id} : {id : string}){
         console.error("Error Deleting tweet",error);
         return {success : false,msg : "Error while deleting the tweet"}
 
-    }finally{
-        await prisma.$disconnect();
     }
     
 }
