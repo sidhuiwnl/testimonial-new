@@ -19,7 +19,7 @@ export default async function  Navbar() {
           Testimonial
         </Link>
       </div>
-      <div className="font-medium">HELLO {username}</div>
+      <div className="font-medium">Welcome {username}</div>
       <div className="flex items-center gap-4">
         <form action={logout}>
 			   { user ?  <Button>Sign out</Button> : null}
